@@ -7,7 +7,7 @@ class News(models.Model):
     content = models.TextField(default='')
     category = models.CharField(max_length=100)
     image = models.ImageField(upload_to='news_images/')
-    slug = AutoSlugField(populate_from='name', unique=True)
+    slug = AutoSlugField(populate_from='category', unique=True)
 
     def __str__(self):
         return self.title
