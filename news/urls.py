@@ -2,9 +2,11 @@ from django.urls import path
 from . import views
 from django.conf import settings
 from django.conf.urls.static import static
+from .views import news_detail
 
 urlpatterns = [
     path('', views.index, name='index'),
+    path('haberler/<slug:news_slug>/', news_detail, name='news_detail'),
     path('page/', views.page, name='page'),
     path('author/', views.author, name='author'),
     path('contact/', views.contact, name='contact'),

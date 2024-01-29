@@ -119,12 +119,12 @@ License: You must have a valid license from official store to legally use the th
             {% for news in all_news %}
               {% if news.id == 1 %}
             <div class="relative hover-img max-h-98 overflow-hidden">
-              <a href="">
+              <a href="{% url 'news_detail' news_slug=news.slug %}">
                 <img class="max-w-full w-full mx-auto h-auto" src="{{ news.image.url }}" alt="{{ news.title }}">
               <!-- ID: {{ news.id }}-->
               </a>
               <div class="absolute px-5 pt-8 pb-5 bottom-0 w-full bg-gradient-cover">
-                <a href="">
+                <a href="{% url 'news_detail' news_slug=news.slug %}">
                   <h2 class="text-3xl font-bold capitalize text-white mb-3">{{ news.title }}</h2>
                 </a>
                 <p class="text-gray-100 hidden sm:inline-block">{{ news.summary }}</p>
@@ -145,12 +145,12 @@ License: You must have a valid license from official store to legally use the th
                 {% if 2 <= news.id and news.id <= 5 %}
               <article class="flex-shrink max-w-full w-full sm:w-1/2">
                 <div class="relative hover-img max-h-48 overflow-hidden">
-                  <a href="">
+                  <a href="{% url 'news_detail' news_slug=news.slug %}">
                     <img class="max-w-full w-full mx-auto h-auto" src="{{ news.image.url }}" alt="{{ news.title }}">
                     <!-- ID: {{ news.id }}-->
                   </a>
                   <div class="absolute px-4 pt-7 pb-4 bottom-0 w-full bg-gradient-cover">
-                    <a href="">
+                    <a href="{% url 'news_detail' news_slug=news.slug %}">
                       <h2 class="text-lg font-bold capitalize leading-tight text-white mb-1">{{ news.title }}</h2>
                     </a>
                     <div class="pt-1">
@@ -181,13 +181,13 @@ License: You must have a valid license from official store to legally use the th
                 {% if 6 <= news.id and news.id <= 11 %}
               <div class="flex-shrink max-w-full w-full sm:w-1/3 px-3 pb-3 pt-3 sm:pt-0 border-b-2 sm:border-b-0 border-dotted border-gray-100">
                 <div class="flex flex-row sm:block hover-img">
-                  <a href="">
+                  <a href="{% url 'news_detail' news_slug=news.slug %}">
                     <img class="max-w-full w-full mx-auto" src="{{ news.image.url }}" alt="{{ news.title }}">
                   </a>
                   <!-- ID: {{ news.id }}-->
                   <div class="py-0 sm:py-3 pl-3 sm:pl-0">
                     <h3 class="text-lg font-bold leading-tight mb-2">
-                      <a href="">{{ news.title }}</a>
+                      <a href="{% url 'news_detail' news_slug=news.slug %}">{{ news.title }}</a>
                     </h3>
                     <p class="hidden md:block text-gray-600 leading-tight mb-1">{{ news.summary }}</p>
                     <a class="text-gray-500" href="#"><span class="inline-block h-3 border-l-2 border-red-600 mr-2"></span>{{ news.category }}</a>
@@ -235,13 +235,13 @@ License: You must have a valid license from official store to legally use the th
                     <li class="splide__slide">
                       <div class="w-full pb-3">
                         <div class="hover-img bg-white">
-                          <a href="">
+                          <a href="{% url 'news_detail' news_slug=news.slug %}">
                             <img class="max-w-full w-full mx-auto" src="{{ news.image.url }}" alt="{{ news.title }}">
                           </a>
                           <!-- ID: {{ news.id }}-->
                           <div class="py-3 px-6">
                             <h3 class="text-lg font-bold leading-tight mb-2">
-                              <a href="">{{ news.title }}</a>
+                              <a href="{% url 'news_detail' news_slug=news.slug %}">{{ news.title }}</a>
                             </h3>
                             <a class="text-gray-500" href="#"><span class="inline-block h-3 border-l-2 border-red-600 mr-2"></span>{{ news.category }}</a>
                           </div>
@@ -275,13 +275,13 @@ License: You must have a valid license from official store to legally use the th
                 {% if 18 <= news.id and news.id <= 25 %}
               <div class="flex-shrink max-w-full w-full sm:w-1/3 lg:w-1/4 px-3 pb-3 pt-3 sm:pt-0 border-b-2 sm:border-b-0 border-dotted border-gray-100">
                 <div class="flex flex-row sm:block hover-img">
-                  <a href="">
+                  <a href="{% url 'news_detail' news_slug=news.slug %}">
                     <img class="max-w-full w-full mx-auto" src="{{ news.image.url }}" alt="{{ news.title }}">
                   </a>
                   <!-- ID: {{ news.id }}-->
                   <div class="py-0 sm:py-3 pl-3 sm:pl-0">
                     <h3 class="text-lg font-bold leading-tight mb-2">
-                      <a href="">{{ news.title }}</a>
+                      <a href="{% url 'news_detail' news_slug=news.slug %}">{{ news.title }}</a>
                     </h3>
                     <p class="hidden md:block text-gray-600 leading-tight mb-1">{{ news.summary }}</p>
                     <a class="text-gray-500" href="#"><span class="inline-block h-3 border-l-2 border-red-600 mr-2"></span>{{ news.category }}</a>
@@ -314,13 +314,13 @@ License: You must have a valid license from official store to legally use the th
               <div class="flex-shrink max-w-full w-full px-3 pb-5">
                 <div class="relative hover-img max-h-98 overflow-hidden">
                   <!--thumbnail-->
-                  <a href="">
+                  <a href="{% url 'news_detail' news_slug=news.slug %}">
                     <img class="max-w-full w-full mx-auto h-auto" src="{{ news.image.url }}" alt="{{ news.title }}">
                   </a>
                   <!-- ID: {{ news.id }}-->
                   <div class="absolute px-5 pt-8 pb-5 bottom-0 w-full bg-gradient-cover">
                     <!--title-->
-                    <a href="">
+                    <a href="{% url 'news_detail' news_slug=news.slug %}">
                       <h2 class="text-3xl font-bold capitalize text-white mb-3">{{ news.title }}</h2>
                     </a>
                     <p class="text-gray-100 hidden sm:inline-block">{{ news.summary }}</p>
@@ -338,13 +338,13 @@ License: You must have a valid license from official store to legally use the th
                 {% if 27 <= news.id and news.id <= 32 %}
               <div class="flex-shrink max-w-full w-full sm:w-1/3 px-3 pb-3 pt-3 sm:pt-0 border-b-2 sm:border-b-0 border-dotted border-gray-100">
                 <div class="flex flex-row sm:block hover-img">
-                  <a href="">
+                  <a href="{% url 'news_detail' news_slug=news.slug %}">
                     <img class="max-w-full w-full mx-auto" src="{{ news.image.url }}" alt="{{ news.title }}">
                   </a>
                   <!-- ID: {{ news.id }}-->
                   <div class="py-0 sm:py-3 pl-3 sm:pl-0">
                     <h3 class="text-lg font-bold leading-tight mb-2">
-                      <a href="">{{ news.title }}</a>
+                      <a href="{% url 'news_detail' news_slug=news.slug %}">{{ news.title }}</a>
                     </h3>
                     <p class="hidden md:block text-gray-600 leading-tight mb-1">{{ news.summary }}</p>
                     <a class="text-gray-500" href="#"><span class="inline-block h-3 border-l-2 border-red-600 mr-2"></span>{{ news.category }}</a>
@@ -412,13 +412,13 @@ License: You must have a valid license from official store to legally use the th
               <div class="flex-shrink max-w-full w-full px-3 pb-5">
                 <div class="relative hover-img max-h-98 overflow-hidden">
                   <!--thumbnail-->
-                  <a href="">
+                  <a href="{% url 'news_detail' news_slug=news.slug %}">
                     <img class="max-w-full w-full mx-auto h-auto" src="{{ news.image.url }}" alt="{{ news.title }}">
                   </a>
                   <!-- ID: {{ news.id }}-->
                   <div class="absolute px-5 pt-8 pb-5 bottom-0 w-full bg-gradient-cover">
                     <!--title-->
-                    <a href="">
+                    <a href="{% url 'news_detail' news_slug=news.slug %}">
                       <h2 class="text-3xl font-bold capitalize text-white mb-3">{{ news.title }}</h2>
                     </a>
                     <p class="text-gray-100 hidden sm:inline-block">{{ news.summary }}</p>
@@ -436,13 +436,13 @@ License: You must have a valid license from official store to legally use the th
                 {% if 34 <= news.id and news.id <= 39 %}
               <div class="flex-shrink max-w-full w-full sm:w-1/3 px-3 pb-3 pt-3 sm:pt-0 border-b-2 sm:border-b-0 border-dotted border-gray-100">
                 <div class="flex flex-row sm:block hover-img">
-                  <a href="">
+                  <a href="{% url 'news_detail' news_slug=news.slug %}">
                     <img class="max-w-full w-full mx-auto" src="{{ news.image.url }}" alt="{{ news.title }}">
                   </a>
                   <!-- ID: {{ news.id }}-->
                   <div class="py-0 sm:py-3 pl-3 sm:pl-0">
                     <h3 class="text-lg font-bold leading-tight mb-2">
-                      <a href="">{{ news.title }}</a>
+                      <a href="{% url 'news_detail' news_slug=news.slug %}">{{ news.title }}</a>
                     </h3>
                     <p class="hidden md:block text-gray-600 leading-tight mb-1">{{ news.summary }}</p>
                     <a class="text-gray-500" href="#"><span class="inline-block h-3 border-l-2 border-red-600 mr-2"></span>{{ news.category }}</a>
