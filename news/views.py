@@ -1,5 +1,5 @@
 from django.shortcuts import get_object_or_404, render
-from .models import News
+from .models import News, Sport
 
 def index(request):
     all_news = News.objects.all()
@@ -11,6 +11,10 @@ def news_detail(request, news_slug):
 
 def page(request):
     return render(request, 'pages/page.html')
+
+def sport(request):
+    all_sport = Sport.objects.all()
+    return render(request, 'pages/sport.html', {'all_sport': all_sport})
 
 def author(request):
     return render(request, 'pages/author.html')

@@ -8,6 +8,7 @@ urlpatterns = [
     path('', views.index, name='index'),
     path('haberler/<slug:news_slug>/', news_detail, name='news_detail'),
     path('page/', views.page, name='page'),
+    path('spor/', views.sport, name='sport'),
     path('author/', views.author, name='author'),
     path('contact/', views.contact, name='contact'),
     path('error/', views.error, name='error'),
