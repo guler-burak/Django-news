@@ -1,6 +1,6 @@
 from django.shortcuts import get_object_or_404, render
 from .models import News, Sport, Economy, Magazine, World, Technology
-
+from .models import ContactMessage
 def index(request):
     all_news = News.objects.all()
     return render(request, 'pages/index.html', {'all_news': all_news})
@@ -32,7 +32,20 @@ def technology(request):
     all_technology = Technology.objects.all()
     return render(request, 'pages/technology.html', {'all_technology':all_technology})
 
+
 def contact(request):
+    if request.method == 'POST':
+        form_data = {
+            'first_name': request.POST.get('inputfirst4'),
+            'last_name': request.POST.get('inputlast4'),
+            'email': request.POST.get('inpuemail4'),
+            'urgency': request.POST.get('inputurgent'),
+            'message': request.POST.get('exampleTextarea1'),
+            'agree_to_terms': request.POST.get('checked-demo') == '1',
+        }
+
+        ContactMessage.objects.create(**form_data) 
+
     return render(request, 'pages/contact.html')
 
 def error(request):

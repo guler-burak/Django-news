@@ -90,3 +90,18 @@ class Technology(models.Model):
     class Meta:
         verbose_name = "Teknoloji"
         verbose_name_plural = "Teknoloji"
+
+class ContactMessage(models.Model):
+    first_name = models.CharField(max_length=100, verbose_name='Ad')
+    last_name = models.CharField(max_length=100, verbose_name='Soyad')
+    email = models.EmailField(verbose_name='E-posta')
+    urgency = models.CharField(max_length=20, choices=[('Low', 'Düşük'), ('Medium', 'Orta'), ('High', 'Yüksek')], verbose_name='Aciliyet')
+    message = models.TextField(verbose_name='Mesaj')
+    agree_to_terms = models.BooleanField(default=False, verbose_name='Kullanım Koşulları\'nı Kabul Ediyorum')
+
+    def __str__(self):
+        return f"{self.first_name} {self.last_name}"
+
+    class Meta:
+        verbose_name = 'Mesaj'
+        verbose_name_plural = 'Mesajlar'

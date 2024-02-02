@@ -117,49 +117,78 @@ License: You must have a valid license from official store to legally use the th
           <div class="flex-shrink max-w-full w-full lg:w-2/3  overflow-hidden">
             <div class="w-full py-3">
               <h2 class="text-gray-800 text-3xl font-bold">
-                <span class="inline-block h-5 border-l-3 border-red-600 mr-2"></span> Contact Us
+                <span class="inline-block h-5 border-l-3 border-red-600 mr-2"></span> Bize Ulaşın
               </h2>
             </div>
             <div class="flex flex-row flex-wrap -mx-3">
               <div class="flex-shrink max-w-full w-full px-3 pb-5">
                 <div class="px-8 py-6 border border-gray-100 bg-white">
-                  <form class="flex flex-wrap flex-row -mx-4">
+                  <form class="flex flex-wrap flex-row -mx-4" id="contactForm" method="post" action="{% url 'contact' %}">
+                    {% csrf_token %}
+                
                     <div class="flex-shrink max-w-full px-4 w-full md:w-1/2 mb-6">
-                      <label for="inputfirst4" class="inline-block mb-2">First name</label>
-                      <input type="text" class="w-full leading-5 relative py-3 px-5 text-gray-800 bg-white border border-gray-100 overflow-x-auto focus:outline-none focus:border-gray-400 focus:ring-0 dark:text-gray-400 dark:bg-gray-700 dark:border-gray-700 dark:focus:border-gray-600" id="inputfirst4" required>
+                        <label for="inputfirst4" class="inline-block mb-2">Ad</label>
+                        <input type="text" name="inputfirst4" class="w-full leading-5 relative py-3 px-5 text-gray-800 bg-white border border-gray-100 overflow-x-auto focus:outline-none focus:border-gray-400 focus:ring-0 dark:text-gray-400 dark:bg-gray-700 dark:border-gray-700 dark:focus:border-gray-600" required>
                     </div>
+                
                     <div class="flex-shrink max-w-full px-4 w-full md:w-1/2 mb-6">
-                      <label for="inputlast4" class="inline-block mb-2">Last name</label>
-                      <input type="text" class="w-full leading-5 relative py-3 px-5 text-gray-800 bg-white border border-gray-100 overflow-x-auto focus:outline-none focus:border-gray-400 focus:ring-0 dark:text-gray-400 dark:bg-gray-700 dark:border-gray-700 dark:focus:border-gray-600" id="inputlast4" required>
+                        <label for="inputlast4" class="inline-block mb-2">Soyad</label>
+                        <input type="text" name="inputlast4" class="w-full leading-5 relative py-3 px-5 text-gray-800 bg-white border border-gray-100 overflow-x-auto focus:outline-none focus:border-gray-400 focus:ring-0 dark:text-gray-400 dark:bg-gray-700 dark:border-gray-700 dark:focus:border-gray-600" required>
                     </div>
+                
                     <div class="flex-shrink max-w-full px-4 w-full md:w-1/2 mb-6">
-                      <label for="inpuemail4" class="inline-block mb-2">Email</label>
-                      <input type="email" class="w-full leading-5 relative py-3 px-5 text-gray-800 bg-white border border-gray-100 overflow-x-auto focus:outline-none focus:border-gray-400 focus:ring-0 dark:text-gray-400 dark:bg-gray-700 dark:border-gray-700 dark:focus:border-gray-600" id="inpuemail4" required>
+                        <label for="inpuemail4" class="inline-block mb-2">E-posta</label>
+                        <input type="email" name="inpuemail4" class="w-full leading-5 relative py-3 px-5 text-gray-800 bg-white border border-gray-100 overflow-x-auto focus:outline-none focus:border-gray-400 focus:ring-0 dark:text-gray-400 dark:bg-gray-700 dark:border-gray-700 dark:focus:border-gray-600" required>
                     </div>
+                
                     <div class="flex-shrink max-w-full px-4 w-full md:w-1/2 mb-6">
-                      <label for="inputurgent" class="inline-block mb-2">Urgency</label>
-                      <select id="inputurgent" class="inline-block w-full leading-5 relative py-3 pl-3 pr-8 text-gray-800 bg-white border border-gray-100 overflow-x-auto focus:outline-none focus:border-gray-400 focus:ring-0 select-caret appearance-none dark:text-gray-400 dark:bg-gray-700 dark:border-gray-700 dark:focus:border-gray-600" required>
-                        <option>Low...</option>
-                        <option>Medium...</option>
-                        <option>Hight...</option>
+                      <label for="inputurgent" class="inline-block mb-2">Aciliyet</label>
+                      <select name="inputurgent" class="inline-block w-full leading-5 relative py-3 pl-3 pr-8 text-gray-800 bg-white border border-gray-100 overflow-x-auto focus:outline-none focus:border-gray-400 focus:ring-0 select-caret appearance-none dark:text-gray-400 dark:bg-gray-700 dark:border-gray-700 dark:focus:border-gray-600" required>
+                          <option value="Low">Düşük</option>
+                          <option value="Medium">Orta</option>
+                          <option value="High">Yüksek</option>
                       </select>
                     </div>
+                
                     <div class="flex-shrink max-w-full px-4 w-full mb-6">
-                      <label for="exampleTextarea1" class="inline-block mb-2">Messages</label>
-                      <textarea class="w-full leading-5 relative py-3 px-5 text-gray-800 bg-white border border-gray-100 overflow-x-auto focus:outline-none focus:border-gray-400 focus:ring-0 dark:text-gray-400 dark:bg-gray-700 dark:border-gray-700 dark:focus:border-gray-600" id="exampleTextarea1" rows="3"></textarea>
+                        <label for="exampleTextarea1" class="inline-block mb-2">Mesaj</label>
+                        <textarea name="exampleTextarea1" class="w-full leading-5 relative py-3 px-5 text-gray-800 bg-white border border-gray-100 overflow-x-auto focus:outline-none focus:border-gray-400 focus:ring-0 dark:text-gray-400 dark:bg-gray-700 dark:border-gray-700 dark:focus:border-gray-600" rows="3"></textarea>
                     </div>
+                
                     <div class="flex-shrink max-w-full px-4 w-full mb-6">
-                      <label class="flex items-center">
-                        <input type="checkbox" name="checked-demo" value="1" class="form-checkbox h-5 w-5 text-blue-500 dark:bg-gray-700 border border-gray-100 dark:border-gray-700 focus:outline-none" required>
-                        <span class="text-gray-700 ml-4">I agree to the Terms of Use</span>
-                      </label>
+                        <label class="flex items-center">
+                            <input type="checkbox" name="checked-demo" value="1" class="form-checkbox h-5 w-5 text-blue-500 dark:bg-gray-700 border border-gray-100 dark:border-gray-700 focus:outline-none" required>
+                            <span class="text-gray-700 ml-4">Kullanım Koşulları'nı kabul ediyorum</span>
+                        </label>
                     </div>
+                
                     <div class="flex-shrink max-w-full px-4 w-full">
-                      <button class="flex items-center py-3 px-5 leading-5 text-gray-100 bg-black hover:text-white hover:bg-gray-900 hover:ring-0 focus:outline-none focus:ring-0" type="submit">
-                        Send messages
-                      </button>
+                        <button class="flex items-center py-3 px-5 leading-5 text-gray-100 bg-black hover:text-white hover:bg-gray-900 hover:ring-0 focus:outline-none focus:ring-0" type="submit">
+                            Mesaj Gönder
+                        </button>
                     </div>
-                  </form>
+                </form>
+                <script>
+                  document.getElementById('contactForm').addEventListener('submit', function(event) {
+                      event.preventDefault(); 
+                
+                      fetch(this.action, {
+                          method: this.method,
+                          body: new FormData(this),
+                      })
+                      .then(response => {
+                          if (response.ok) {
+                              alert('Mesajınız başarıyla gönderildi!');
+                              document.getElementById('contactForm').reset();
+                          } else {
+                              alert('Bir hata oluştu. Lütfen tekrar deneyin.');
+                          }
+                      })
+                      .catch(error => {
+                          console.error('Fetch hatası:', error);
+                      });
+                  });
+                </script>
                 </div>
               </div>
             </div>
