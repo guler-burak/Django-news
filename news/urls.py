@@ -10,6 +10,7 @@ urlpatterns = [
     path('page/', views.page, name='page'),
     path('spor/', views.sport, name='sport'),
     path('ekonomi/', views.economy, name='economy'),
+    path('magazin/', views.magazine, name='magazine'),
     path('contact/', views.contact, name='contact'),
     path('error/', views.error, name='error'),
     path('index2/', views.index2, name='index2'),
