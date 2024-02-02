@@ -11,6 +11,7 @@ urlpatterns = [
     path('spor/', views.sport, name='sport'),
     path('ekonomi/', views.economy, name='economy'),
     path('magazin/', views.magazine, name='magazine'),
+    path('teknoloji/', views.technology, name='technology'),
     path('dunya/', views.world, name='world'),
     path('contact/', views.contact, name='contact'),
     path('error/', views.error, name='error'),

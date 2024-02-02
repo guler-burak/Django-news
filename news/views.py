@@ -1,5 +1,5 @@
 from django.shortcuts import get_object_or_404, render
-from .models import News, Sport, Economy, Magazine, World
+from .models import News, Sport, Economy, Magazine, World, Technology
 
 def index(request):
     all_news = News.objects.all()
@@ -27,6 +27,10 @@ def magazine(request):
 def world(request):
     all_world = World.objects.all()
     return render(request, 'pages/world.html', {'all_world':all_world})
+
+def technology(request):
+    all_technology = Technology.objects.all()
+    return render(request, 'pages/technology.html', {'all_technology':all_technology})
 
 def contact(request):
     return render(request, 'pages/contact.html')
